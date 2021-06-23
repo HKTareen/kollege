@@ -31,17 +31,19 @@ class _MyStoreState extends State<MyStore> {
                                   left: 20,
                                   child: Row(mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
                                         'Hi Stefen!',
                                         style: subHeading,
                                       ),
-                                      Icon(Icons.person_pin),
-                                      Icon(Icons.shopping_basket)
+                                      Icon(Icons.person_pin,color: KisLightColor,),
+                                      Icon(Icons.shopping_basket,color: KisLightColor,)
                                     ],
                                   ),
-                                )
+                                ),
+                                Positioned(top: 40,left: 20,child: Text("SUN'S OUT",style: heading,)),
+                                Positioned(top: 45,left: 20,child: Text('24 March-01 April',style: focusParagraph,))
                               ],
                             ))))
               ],
