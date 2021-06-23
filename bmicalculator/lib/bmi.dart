@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'components/uiDesigns.dart';
-import 'details.dart';
+import 'bmicalculator.dart';
 
 class BmiCalculate extends StatefulWidget {
   @override
@@ -45,7 +45,7 @@ class _BmiCalculateState extends State<BmiCalculate> {
               height: 20,
             ),
             RiasedBtnsubmit(
-              color: Colors.red,
+              color: Colors.lightGreen,
               textColor: Colors.white,
               text: 'Calculate',
               onTap: () {

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:myfirst/components/constants.dart';
+import 'package:myfirst/screens/store.dart';
 
 import 'bmi.dart';
 
@@ -12,10 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.yellow,
+        primarySwatch: KisPrimaryColor,
       ),
-      home: BmiCalculate()
+      home: MyStore()//BmiCalculate()
     );
   }
 }
