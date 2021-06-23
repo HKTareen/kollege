@@ -15,9 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: KisPrimaryColor,
-      ),
+      // theme: ThemeData(
+      //   primarySwatch: ,
+      // ),
       home: MyStore()//BmiCalculate()
     );
   }
