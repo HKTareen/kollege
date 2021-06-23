@@ -28,8 +28,8 @@ class _MyStoreState extends State<MyStore> {
                               children: [
                                 Positioned(
                                   top: 15,
-                                  left: 20,
-                                  child: Row(mainAxisSize: MainAxisSize.max,
+                                  left: 50,
+                                  child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
@@ -37,13 +37,15 @@ class _MyStoreState extends State<MyStore> {
                                         'Hi Stefen!',
                                         style: subHeading,
                                       ),
-                                      Icon(Icons.person_pin,color: KisLightColor,),
-                                      Icon(Icons.shopping_basket,color: KisLightColor,)
+                                      SizedBox(width: size.width*0.54,),
+                                      IconButton(icon: Icon(Icons.person_pin,color: KisLightColor,),onPressed: null,),
+                                      SizedBox(width: 10,),
+                                      IconButton(icon: Icon(Icons.shopping_basket,color: KisLightColor,),onPressed: null,)
                                     ],
                                   ),
                                 ),
-                                Positioned(top: 40,left: 20,child: Text("SUN'S OUT",style: heading,)),
-                                Positioned(top: 45,left: 20,child: Text('24 March-01 April',style: focusParagraph,))
+                                Positioned(top: 50,left: 50,child: Text("SUN'S OUT",style: heading,)),
+                                Positioned(top: 75,left: 50,child: Text('24 March--01 April',style: focusParagraph,))
                               ],
                             ))))
               ],
