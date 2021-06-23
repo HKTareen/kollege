@@ -17,11 +17,12 @@ const TextStyle subHeading = TextStyle(
 );
 const TextStyle subject = TextStyle(
   color: KisDarkColor,
-  fontSize: 15,
+  fontSize: 22,fontWeight: FontWeight.bold
 );
 const TextStyle paragraph = TextStyle(
   color: KisDarkColor,
-  fontSize: 12,
+  fontSize: 15,
+  fontWeight: FontWeight.w700
 );
 const TextStyle focusParagraph =
     TextStyle(color: KisLightColor, fontSize: 15, fontWeight: FontWeight.bold);

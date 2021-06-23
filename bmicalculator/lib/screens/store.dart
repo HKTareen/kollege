@@ -13,6 +13,7 @@ class _MyStoreState extends State<MyStore> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.grey.shade50,
       body: SingleChildScrollView(
         child: Container(
           width: size.width,
