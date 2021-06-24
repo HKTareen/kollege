@@ -3,6 +3,7 @@ import 'package:myfirst/components/constants.dart';
 import 'package:myfirst/screens/store.dart';
 
 import 'bmi.dart';
+import 'components/Items.dart';
 
 void main() {
   runApp(MyApp());
