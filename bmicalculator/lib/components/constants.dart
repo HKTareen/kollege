@@ -8,6 +8,7 @@ const MaterialColor KisPrimaryColor = MaterialColor(
   },
 );
 const Color KisDarkColor = Colors.black;
+const Color KisGray = Colors.grey;
 const Color KisLightColor = Colors.white;
 const TextStyle heading =
     TextStyle(color: KisLightColor, fontSize: 29, fontWeight: FontWeight.bold);
@@ -26,3 +27,20 @@ const TextStyle paragraph = TextStyle(
 );
 const TextStyle focusParagraph =
     TextStyle(color: KisLightColor, fontSize: 15, fontWeight: FontWeight.bold);
+const TextStyle boldPrimary = TextStyle(
+    color: KisPrimaryColor,
+    fontSize: 22,fontWeight: FontWeight.bold
+);
+
+const TextStyle boldSubtitle = TextStyle(
+    color: KisDarkColor,
+    fontSize: 16,fontWeight: FontWeight.bold
+);
+const TextStyle grayValue = TextStyle(
+    color: KisGray,
+    fontSize: 16,fontWeight: FontWeight.bold
+);
+const TextStyle boldPrimaryText = TextStyle(
+    color: KisPrimaryColor,
+    fontSize: 18,fontWeight: FontWeight.bold
+);

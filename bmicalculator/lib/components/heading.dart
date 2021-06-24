@@ -44,7 +44,7 @@ class _MainHeadState extends State<MainHead> {
                     Positioned(top: 60,left: 50,child: Text("SUN'S OUT!!",style: heading,)),
                     Positioned(top: 90,left: 50,child: Text('${widget.startDate}--${widget.endDate}',style: focusParagraph,)),
                     Positioned(bottom: 30,left: 15,child: Icon(Icons.arrow_back_ios,color: KisLightColor,size: 20,)),
-                    Positioned(bottom: 30,left: size.width*0.91,child: Icon(Icons.arrow_forward_ios,color: KisLightColor,size: 20,))
+                    Positioned(bottom: 30,left: size.width*0.91,child: Icon(Icons.arrow_forward_ios,color: KisGray,size: 20,))
                   ],
                 ))));
   }

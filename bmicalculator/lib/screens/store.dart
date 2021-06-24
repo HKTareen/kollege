@@ -14,7 +14,7 @@ class _MyStoreState extends State<MyStore> {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
-      body: SingleChildScrollView(
+      body: SingleChildScrollView(scrollDirection: Axis.vertical,
         child: Container(
           width: size.width,
           height: size.height,
