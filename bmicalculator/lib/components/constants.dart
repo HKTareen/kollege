@@ -4,7 +4,7 @@ const MaterialColor KisPrimaryColor = MaterialColor(
   0xFF793E6C,
   const <int, Color>{
     50: const Color(0xFF793E4C),
-    100: const Color(0xFF793E7C),
+    100: const Color(0xFF650f43),
   },
 );
 const Color KisDarkColor = Colors.black;

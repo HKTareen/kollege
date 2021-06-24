@@ -15,18 +15,14 @@ class _MyStoreState extends State<MyStore> {
     return Scaffold(
       backgroundColor: Colors.grey.shade50,
       body: SingleChildScrollView(scrollDirection: Axis.vertical,
-        child: Container(
-          width: size.width,
-          height: size.height,
-          child: Expanded(
-            child: Column(
-              children: [
-                MainHead(),
-                Items()
+        child: Column(
+          children: [
+            MainHead(),
+            Items(),
+            Items(),
+            Items(),
 
-              ],
-            ),
-          ),
+          ],
         ),
       ),
     );
