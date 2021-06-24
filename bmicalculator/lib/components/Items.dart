@@ -38,19 +38,32 @@ class _ItemsState extends State<Items> {
                   'Full Bodied Red',
                   style: paragraph,
                 )),
-            Positioned(top: 100,left: 30,
+            Positioned(
+                top: 100,
+                left: 30,
                 child: SizedBox(
                     height: 100,
                     width: 100,
-                    child: Container(decoration: BoxDecoration(),
-                      child: Image(fit: BoxFit.fill,
-                        image: AssetImage('assets/images/bear.jpg',),
+                    child: Container(
+                      padding: EdgeInsets.all(3),
+                      decoration: BoxDecoration(
+                          border: Border.all(color: Colors.brown, width: 4),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: ClipRRect(borderRadius: BorderRadius.circular(15),
+                        child: Image(
+                          fit: BoxFit.fill,
+                          image: AssetImage(
+                            'assets/images/bear.jpg',
+                          ),
+                        ),
                       ),
                     ))),
-            Positioned(top: 100,left: 300,
+            Positioned(
+              top: 100,
+              left: 300,
               child: Column(
                 children: [
-                  Text('hamza'),
+                  Text('hamza khan',textAlign: TextAlign.right,),
                   SizedBox(
                     height: 20,
                   ),
@@ -68,4 +81,3 @@ class _ItemsState extends State<Items> {
     );
   }
 }
-
