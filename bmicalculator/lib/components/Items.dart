@@ -12,20 +12,16 @@ class _ItemsState extends State<Items> {
   var count = 0;
   var expandCollapse = 'Expand';
   var cardWidth = 300.0;
+  var image= 'assets/images/bear.jpg';
+  var qty = 5;
+  var subHeadingSize = 15.0;
+  var headingSize = 22.0;
 
 
   @override
   Widget build(BuildContext context) {
-    Function changeImage = (){
-      var image;
-      if(widget.isExpanded)
-        image = 'assets/images/bear2.png';
-          else
-            image = 'assets/images/bear.jpg';
-      return image;
 
-    };
-    final qty = 5;
+
     final size = MediaQuery.of(context).size;
     return SizedBox(
       height: cardWidth,
@@ -39,20 +35,22 @@ class _ItemsState extends State<Items> {
         child: Stack(
           children: [
             Padding(
-              padding: const EdgeInsets.only(top: 20, left: 30, right: 40),
+              padding: const EdgeInsets.only(top: 20, left: 30, right: 0),
               child: Text(
                 'Chateau Teyssier Saint Emilion Grand Cru 2014',
-                style: subject,
+                style: TextStyle(
+                  color: KisDarkColor,
+                  fontSize: headingSize,fontWeight: FontWeight.bold),
                 textAlign: TextAlign.left,
                 maxLines: 2,
               ),
             ),
             Positioned(
-                top: 80,
+                top: 77,
                 left: 30,
                 child: Text(
                   'Full Bodied Red',
-                  style: paragraph,
+                  style: TextStyle(color: KisDarkColor,fontSize: subHeadingSize,fontWeight: FontWeight.bold),
                 )),
             Positioned(
                 top: 100,
@@ -61,7 +59,7 @@ class _ItemsState extends State<Items> {
                     height: 90,
                     width: 90,
                     child: Container(
-                      padding: EdgeInsets.all(1),
+                      //padding: EdgeInsets.all(1),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.black, width: 4),
                           borderRadius: BorderRadius.circular(20)),
@@ -70,7 +68,7 @@ class _ItemsState extends State<Items> {
                         child: Image(
                           fit: BoxFit.fill,
                           image: AssetImage(
-                            'assets/images/bear.jpg',
+                            image,
                           ),
                         ),
                       ),
@@ -118,12 +116,17 @@ class _ItemsState extends State<Items> {
                         widget.isExpanded = true;
                         cardWidth = 480.0;
                         expandCollapse = 'Collapse';
-                        changeImage();
+                        image = 'assets/images/bear3.png';
+                        headingSize = 23.0;
+                        subHeadingSize = 17.0;
 
                       } else {
                         widget.isExpanded = false;
                         cardWidth = 300.0;
                         expandCollapse = 'Expand';
+                        image = 'assets/images/bear.jpg';
+                        headingSize = 22.0;
+                        subHeadingSize = 15.0;
                       }
                     });
                   },
