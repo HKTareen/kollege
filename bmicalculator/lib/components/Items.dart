@@ -193,10 +193,10 @@ class _ItemsState extends State<Items> {
             if(widget.isExpanded)
               Positioned(top: 260,left: 30,child: Padding(
                 padding: const EdgeInsets.only(right: 20),
-                child: Flexible(
+                child: Expanded(
                   child: Text(
                     'God! this thing is great! Made with purpose and it shows.'
-                        ' Damn strong,ss',style: paragraph,maxLines: 2,textAlign: TextAlign.left,),
+                        ' Damn strong,ss',style: paragraph,maxLines: 5,textAlign: TextAlign.left,),
                 ),
               ))
 

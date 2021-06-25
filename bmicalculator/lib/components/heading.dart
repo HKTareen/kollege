@@ -37,7 +37,7 @@ class _MainHeadState extends State<MainHead> {
                           SizedBox(width: size.width*0.39,),
                           IconButton(icon: Icon(Icons.person_pin,color: KisLightColor,),onPressed: (){print('hamza');},),
                           SizedBox(width: 0,),
-                          IconButton(icon: Icon(Icons.shopping_basket,color: KisLightColor,),onPressed: null,)
+                          IconButton(icon: Icon(Icons.shopping_basket_outlined,color: KisLightColor,),onPressed: null,)
                         ],
                       ),
                     ),
