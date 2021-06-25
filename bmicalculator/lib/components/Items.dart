@@ -13,8 +13,19 @@ class _ItemsState extends State<Items> {
   var expandCollapse = 'Expand';
   var cardWidth = 300.0;
 
+
   @override
   Widget build(BuildContext context) {
+    Function changeImage = (){
+      var image;
+      if(widget.isExpanded)
+        image = 'assets/images/bear2.png';
+          else
+            image = 'assets/images/bear.jpg';
+      return image;
+
+    };
+    final qty = 5;
     final size = MediaQuery.of(context).size;
     return SizedBox(
       height: cardWidth,
@@ -107,6 +118,8 @@ class _ItemsState extends State<Items> {
                         widget.isExpanded = true;
                         cardWidth = 480.0;
                         expandCollapse = 'Collapse';
+                        changeImage();
+
                       } else {
                         widget.isExpanded = false;
                         cardWidth = 300.0;
@@ -121,8 +134,8 @@ class _ItemsState extends State<Items> {
                 )),
             if (widget.isExpanded)
                   Positioned(
-                    top: 390,
-                    left: 30,
+                    top: 370,
+                    left: size.width*0.066,
                     child: Row(
                       children: [
                         Container(
@@ -181,6 +194,7 @@ class _ItemsState extends State<Items> {
                                 ),
                                 onTap: () {
                                   setState(() {
+                                    if(qty>count)
                                     count++;
                                   });
                                 },
@@ -191,14 +205,29 @@ class _ItemsState extends State<Items> {
                       ],
                     )),
             if(widget.isExpanded)
-              Positioned(top: 260,left: 30,child: Padding(
-                padding: const EdgeInsets.only(right: 20),
+              Container(margin: EdgeInsets.only(top: 260,left: 30),padding: EdgeInsets.only(right: 50),
                 child: Expanded(
                   child: Text(
-                    'God! this thing is great! Made with purpose and it shows.'
-                        ' Damn strong,ss',style: paragraph,maxLines: 5,textAlign: TextAlign.left,),
+                    'Wow, thanks so much for the wonderful '
+                        'review! I’ve exciting plans for the app’s'
+                        ' v2, but rest assured: 1) the app’s core '
+                        'simplicity/purpose won’t be compromised and 2) '
+                        'if there are any subscription elements it would'
+                        ' only be reserved for an IAP that unlocks features '
+                        ,
+                    style: paragraph,maxLines: 5,textAlign: TextAlign.justify,),
                 ),
-              ))
+              ),
+            if(widget.isExpanded)
+              Positioned(bottom: 20,left: size.width*0.6,
+                child: RichText(
+                  text: TextSpan(style: boldPrimaryText, children: [
+                    TextSpan(text: qty.toString()),
+                    TextSpan(text: ' remaining'),
+                  ]),
+                ),
+              ),
+
 
 
           ],
