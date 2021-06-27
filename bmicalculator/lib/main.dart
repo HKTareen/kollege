@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myfirst/components/constants.dart';
+import 'package:myfirst/screens/data_form.dart';
 import 'package:myfirst/screens/store.dart';
 
 import 'screens/bmi.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       // theme: ThemeData(
       //   primarySwatch: ,
       // ),
-      home: MyStore()//BmiCalculate()
+      home: AddAuction()//BmiCalculate()
     );
   }
 }

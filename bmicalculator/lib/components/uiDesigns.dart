@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:myfirst/components/constants.dart';
 
 class MyUIDesigns {
   static TextEditingController email = TextEditingController();
@@ -18,9 +19,9 @@ class MyUIDesigns {
 
   static Widget backGroundMain = Expanded(
       child: Image(
-        image: AssetImage('assets/images/background1.jpg'),
-        fit: BoxFit.cover,
-      ));
+    image: AssetImage('assets/images/background1.jpg'),
+    fit: BoxFit.cover,
+  ));
 
   static Widget welcome = Text(
     'Welcome Back!',
@@ -95,79 +96,80 @@ class MyUIDesigns {
                 borderSide: BorderSide(color: Colors.teal, width: 5.0))),
       ));
 }
-  class  AddRemoveBtn {
 
+class AddRemoveBtn {
   final Function ontap;
 
   AddRemoveBtn(this.ontap);
 
   @override
-    Widget build(BuildContext context) {
-      return
-        Container(
-          height: 40,
-          width: 100,
-          decoration: BoxDecoration(
-              border: Border.all(color: Colors.blue),
-              borderRadius: BorderRadius.all(Radius.circular(10))),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              IconButton(
-                icon: Icon(
-                  Icons.add,
-                  color: Colors.blue,
-                  size: 20,
-                ),
-                onPressed: ontap,
-              ),
-              Container(
-                color: Colors.blue,
-                height: 80,
-                width: 1,
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.remove,
-                  color: Colors.blue,
-                  size: 20,
-                ),
-                onPressed: ontap,
-              ),
-            ],
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40,
+      width: 100,
+      decoration: BoxDecoration(
+          border: Border.all(color: Colors.blue),
+          borderRadius: BorderRadius.all(Radius.circular(10))),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          IconButton(
+            icon: Icon(
+              Icons.add,
+              color: Colors.blue,
+              size: 20,
+            ),
+            onPressed: ontap,
           ),
-        );
-    }
+          Container(
+            color: Colors.blue,
+            height: 80,
+            width: 1,
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.remove,
+              color: Colors.blue,
+              size: 20,
+            ),
+            onPressed: ontap,
+          ),
+        ],
+      ),
+    );
   }
+}
 
-  class DropdownBtn extends StatefulWidget {
-  static var  menuitems = ['Standard','Metric'];
-    @override
-    _DropdownBtnState createState() => _DropdownBtnState();
+class DropdownBtn extends StatefulWidget {
+  static var menuitems = ['Standard', 'Metric'];
+
+  @override
+  _DropdownBtnState createState() => _DropdownBtnState();
+}
+
+class _DropdownBtnState extends State<DropdownBtn> {
+  var value = 'Standard';
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton(
+      style: TextStyle(
+        fontSize: 22,
+      ),
+      items: DropdownBtn.menuitems.map((String item) {
+        return DropdownMenuItem(child: Text(item), value: item);
+      }).toList(),
+      icon: Icon(Icons.arrow_downward),
+      onChanged: (value) {
+        setState(() {
+          this.value = value;
+        });
+      },
+      value: value,
+      dropdownColor: Colors.grey.shade100,
+    );
   }
-
-  class _DropdownBtnState extends State<DropdownBtn> {
-    var value = 'Standard';
-    @override
-    Widget build(BuildContext context) {
-      return DropdownButton(style: TextStyle(fontSize: 22,),
-        items: DropdownBtn.menuitems.map((String item) {
-          return DropdownMenuItem(child: Text(item), value: item);
-        }).toList(),
-        icon: Icon(Icons.arrow_downward),
-        onChanged: (value){
-          setState(() {
-            this.value=value;
-          });
-        },
-        value: value,
-        dropdownColor: Colors.grey.shade100,
-
-      );
-    }
-  }
-
-
+}
 
 class RiasedBtnsubmit extends StatelessWidget {
   final Color color;
@@ -246,5 +248,46 @@ class RiasedBtnsubmit extends StatelessWidget {
     var dialog = AlertDialog(
         title: Text('Mashallah'), content: Text('Sb thek thak hai'));
     showDialog(context: context, builder: (context) => dialog);
+  }
+}
+
+class FieldBox extends StatelessWidget {
+  var text;
+  var width;
+  var height;
+  Widget child;
+
+  FieldBox({this.text, this.width, this.height, this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: width,
+      height: height,
+      child: child,
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+      color: KisAuctionPrimaryClr.shade300,
+    );
+  }
+}
+
+class TextFieldAuction extends StatefulWidget {
+  var text;
+  var width;
+  var height;
+  Widget child;
+
+  TextFieldAuction({this.text, this.width, this.height, this.child});
+
+  @override
+  _TextFieldAuctionState createState() => _TextFieldAuctionState();
+}
+
+class _TextFieldAuctionState extends State<TextFieldAuction> {
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        width: widget.width, height: widget.height, child: TextField(decoration: InputDecoration( fillColor: KisAuctionPrimaryClr.shade300,
+      filled: true,hintText: widget.text,border: InputBorder.none,),));
   }
 }
