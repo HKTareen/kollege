@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'components/uiDesigns.dart';
-import 'bmicalculator.dart';
+import '../components/uiDesigns.dart';
+import '../components/bmicalculator.dart';
 
 class BmiCalculate extends StatefulWidget {
   @override

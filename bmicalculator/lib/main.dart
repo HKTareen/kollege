@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myfirst/components/constants.dart';
 import 'package:myfirst/screens/store.dart';
 
-import 'bmi.dart';
+import 'screens/bmi.dart';
 import 'components/Items.dart';
 
 void main() {
