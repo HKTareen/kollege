@@ -286,8 +286,17 @@ class TextFieldAuction extends StatefulWidget {
 class _TextFieldAuctionState extends State<TextFieldAuction> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        width: widget.width, height: widget.height, child: TextField(decoration: InputDecoration( fillColor: KisAuctionPrimaryClr.shade300,
-      filled: true,hintText: widget.text,border: InputBorder.none,),));
+    return ClipRRect(borderRadius: BorderRadius.circular(10),
+      child: SizedBox(width: widget.width,
+        height: widget.height,
+        child: TextField(
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              hintText: widget.text,
+              filled: true,
+              fillColor: KisAuctionPrimaryClr.shade300),
+        ),
+      ),
+    );
   }
 }

@@ -34,16 +34,20 @@ class _AddAuctionState extends State<AddAuction> {
     return Scaffold(
       backgroundColor: KisAuctionPrimaryClr,
       body: SafeArea(
-        child: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
+        child: SingleChildScrollView(
+          child: Center(
+            child: _widgetOptions.elementAt(_selectedIndex),
+          ),
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: KisAuctionPrimaryClr,
+      bottomNavigationBar: BottomNavigationBar(showUnselectedLabels: false,showSelectedLabels: false,backgroundColor: KisAuctionPrimaryClr,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: ''),
           BottomNavigationBarItem(
-            icon: Icon(Icons.keyboard_arrow_right),
+            icon: Icon(Icons.home_outlined),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
             label: 'Business',
           ),
           BottomNavigationBarItem(
