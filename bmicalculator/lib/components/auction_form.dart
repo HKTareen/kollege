@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:myfirst/components/constants.dart';
 import 'package:myfirst/components/uiDesigns.dart';
@@ -66,20 +64,52 @@ class _AuctionFormState extends State<AuctionForm> {
           height: 10,
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 10.5,right: 10),
+          padding: const EdgeInsets.only(left: 10.5, right: 10),
           child: Row(
             children: [
               Expanded(
                 child: TextFieldAuction(
-                  width: MediaQuery.of(context).size.width * 0.95/2,
+                  width: MediaQuery.of(context).size.width * 0.95 / 2,
                   text: 'Available Quantity',
                 ),
               ),
-              SizedBox(width: 5,),
+              SizedBox(
+                width: 5,
+              ),
               Expanded(
                 child: TextFieldAuction(
-                  width: MediaQuery.of(context).size.width * 0.95/2,
+                  width: MediaQuery.of(context).size.width * 0.95 / 2,
                   text: 'Price Per Unit',
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 10),
+        Padding(
+          padding: const EdgeInsets.only(left: 10.5, right: 10),
+          child: Row(
+            children: [
+              Expanded(
+                child: FieldBox(
+                  width: MediaQuery.of(context).size.width * 0.95 / 2,
+                  text: 'Category',
+                  icon: Icon(Icons.category_outlined,color: KisAuctionPrimaryClr.shade100,),
+                  list: MenuItems.category,
+                ),
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Expanded(
+                child: FieldBox(
+                  width: MediaQuery.of(context).size.width * 0.95 / 2,
+                  text: 'Quality',
+                  icon: Icon(
+                    Icons.hd_outlined,
+                    color: KisAuctionPrimaryClr.shade100,
+                  ),
+                  list: MenuItems.quality,
                 ),
               ),
             ],
@@ -88,4 +118,13 @@ class _AuctionFormState extends State<AuctionForm> {
       ],
     );
   }
+}
+
+class MenuItems {
+  static var category = [
+    'Vegetable',
+    'Fruits',
+  ];
+  static var quality = ['A', 'B', 'C'];
+  static var location = ['Lahore', 'Karachi', 'Multan'];
 }

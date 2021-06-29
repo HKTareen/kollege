@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:myfirst/components/auction_form.dart';
 import 'package:myfirst/components/constants.dart';
 
 class MyUIDesigns {
@@ -251,22 +252,66 @@ class RiasedBtnsubmit extends StatelessWidget {
   }
 }
 
-class FieldBox extends StatelessWidget {
+class FieldBox extends StatefulWidget {
   var text;
   var width;
   var height;
+  var value ;
   Widget child;
+  Widget icon;
+  var list = MenuItems.category;
 
-  FieldBox({this.text, this.width, this.height, this.child});
+  FieldBox({this.value,this.list,this.text, this.width, this.height, this.child,this.icon});
 
+  @override
+  _FieldBoxState createState() => _FieldBoxState();
+}
+
+class _FieldBoxState extends State<FieldBox> {
+  @override
+  void initState() {
+    widget.value = widget.list[0];
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: width,
-      height: height,
-      child: child,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-      color: KisAuctionPrimaryClr.shade300,
+      width: widget.width,
+     height: widget.height,
+      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+            Expanded(flex: 1,child: widget.icon),
+          Expanded(flex: 4,
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
+              SizedBox(height: 18,),
+              Padding(
+                padding: const EdgeInsets.only(right: 30),
+                child: Text(widget.text,style: TextStyle(color: KisAuctionPrimaryClr.shade100),textAlign: TextAlign.left,),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 10,bottom: 15),
+                child: DropdownButton(isDense: true,isExpanded: true,
+                  items: widget.list.map((String item) {
+                    return DropdownMenuItem(child: Text(item,textAlign: TextAlign.left,style: TextStyle(color: KisAuctionPrimaryClr.shade100),), value: item);
+                  }).toList(),
+                  icon: Icon(Icons.arrow_drop_down,size: 26,),
+                  onChanged: (value){
+                    setState(() {
+                      widget.value=value;
+                    });
+                  },
+                  value: widget.value,
+                  dropdownColor: KisAuctionPrimaryClr,
+
+                ),
+              ),
+            ],),
+          )
+        ],
+      ),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: KisAuctionPrimaryClr.shade300),
     );
   }
 }
@@ -286,8 +331,10 @@ class TextFieldAuction extends StatefulWidget {
 class _TextFieldAuctionState extends State<TextFieldAuction> {
   @override
   Widget build(BuildContext context) {
-    return ClipRRect(borderRadius: BorderRadius.circular(10),
-      child: SizedBox(width: widget.width,
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: SizedBox(
+        width: widget.width,
         height: widget.height,
         child: TextField(
           decoration: InputDecoration(
@@ -300,3 +347,4 @@ class _TextFieldAuctionState extends State<TextFieldAuction> {
     );
   }
 }
+
