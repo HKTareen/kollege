@@ -275,43 +275,45 @@ class _FieldBoxState extends State<FieldBox> {
   }
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: widget.width,
-     height: widget.height,
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-            Expanded(flex: 1,child: widget.icon),
-          Expanded(flex: 4,
-            child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
-              SizedBox(height: 18,),
-              Padding(
-                padding: const EdgeInsets.only(right: 30),
-                child: Text(widget.text,style: TextStyle(color: KisAuctionPrimaryClr.shade100),textAlign: TextAlign.left,),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 10,bottom: 15),
-                child: DropdownButton(isDense: true,isExpanded: true,
-                  items: widget.list.map((String item) {
-                    return DropdownMenuItem(child: Text(item,textAlign: TextAlign.left,style: TextStyle(color: KisAuctionPrimaryClr.shade100),), value: item);
-                  }).toList(),
-                  icon: Icon(Icons.arrow_drop_down,size: 26,),
-                  onChanged: (value){
-                    setState(() {
-                      widget.value=value;
-                    });
-                  },
-                  value: widget.value,
-                  dropdownColor: KisAuctionPrimaryClr,
-
+    return Expanded(
+      child: Container(
+        width: widget.width,
+       height: widget.height,
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+              Expanded(flex: 1,child: widget.icon),
+            Expanded(flex: 4,
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start,children: [
+                SizedBox(height: 18,),
+                Padding(
+                  padding: const EdgeInsets.only(right: 30),
+                  child: Text(widget.text,style: TextStyle(color: KisAuctionPrimaryClr.shade100),textAlign: TextAlign.left,),
                 ),
-              ),
-            ],),
-          )
-        ],
+                Padding(
+                  padding: const EdgeInsets.only(right: 10,bottom: 15),
+                  child: DropdownButton(isDense: true,isExpanded: true,
+                    items: widget.list.map((String item) {
+                      return DropdownMenuItem(child: Text(item,textAlign: TextAlign.left,style: TextStyle(color: KisAuctionPrimaryClr.shade100),), value: item);
+                    }).toList(),
+                    icon: Icon(Icons.arrow_drop_down,size: 26,),
+                    onChanged: (value){
+                      setState(() {
+                        widget.value=value;
+                      });
+                    },
+                    value: widget.value,
+                    dropdownColor: KisAuctionPrimaryClr,
+
+                  ),
+                ),
+              ],),
+            )
+          ],
+        ),
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: KisAuctionPrimaryClr.shade300),
       ),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: KisAuctionPrimaryClr.shade300),
     );
   }
 }

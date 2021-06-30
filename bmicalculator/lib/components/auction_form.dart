@@ -115,6 +115,18 @@ class _AuctionFormState extends State<AuctionForm> {
             ],
           ),
         ),
+        SizedBox(height: 10),
+        SizedBox(height: 75,
+          child: FieldBox(
+            width: MediaQuery.of(context).size.width * 0.95,
+            text: 'Location',
+            icon: Icon(
+              Icons.location_on_outlined,
+              color: KisAuctionPrimaryClr.shade100,
+            ),
+            list: MenuItems.location,
+          ),
+        ),
       ],
     );
   }
